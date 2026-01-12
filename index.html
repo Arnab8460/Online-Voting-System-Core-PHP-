@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Voting System - Login</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg,#2980b9,#6dd5fa);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            background: #fff;
+            width: 350px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            background: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover{
+            background: #1f6391;
+        }
+        p{
+            text-align: center;
+            margin-top: 15px;
+        }
+        a{
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Online Voting Login</h2>
+
+    <form action="api/login.php" method="POST">
+        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <select name="role" required>
+            <option value="">-- Select Your Role --</option>
+            <option value="1">Voter</option>
+            <option value="2">Group</option>
+        </select>
+
+        <button id="loginbtn" name="loginbtn" type="submit">Login</button>
+    </form>
+
+    <p>New User? <a href="routes/register.html">Register Here</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Voting System - Register</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg,#8e44ad,#c39bd3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            background: #fff;
+            width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, textarea, select{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        textarea{
+            resize: none;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            background: #8e44ad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover{
+            background: #6c3483;
+        }
+        p{
+            text-align: center;
+            margin-top: 15px;
+        }
+        a{
+            color: #8e44ad;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        label{
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Voter Registration</h2>
+
+    <form action="../api/register.php" method="POST" enctype="multipart/form-data">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+
+        <textarea name="address" placeholder="Enter Full Address" rows="3" required></textarea>
+
+        <label>Upload Profile Picture</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <input type="password" name="password" placeholder="Create Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <select name="role" required>
+            <option value="">-- Select Your Role --</option>
+            <option value="1">Voter</option>
+            <option value="2">Group</option>
+        </select>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already Registered? <a href="../index.html">Login</a></p>
+</div>
+
+</body>
+</html>
